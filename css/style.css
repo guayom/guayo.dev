@@ -1,8 +1,26 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
+:root {
+    --primary: #333;
+    --cool-font: 'Bricolage Grotesque', sans-serif;
+
+    --color-beige: hsla(36, 31%, 90%, 1);
+    --color-green500: hsla(172, 95%, 18%, 1);
+    --color-green600: hsla(171, 15%, 35%, 1);
+    --color-purple: #d094e5;
+    --color-light-blue: #a3dbd4;
+    --color-papaya: #F0B794;
+    --color-orange: #C84C09;
+
+    --color-background: var(--color-beige);
+    --color-primary: var(--color-green500);
+    --color-secondary: var(--color-green600);
+    --color-accent:  var(--color-orange);
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background: #f5f5f5;
+    background: var(--color-background);
     color: #333;
     font-size: 1.1rem;
     line-height: 1.5;
@@ -14,24 +32,39 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    color: #333;
+    font-size: 7rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    font-family: var(--cool-font);
+    line-height: 1em;
+    margin-bottom: 2.5rem;
 }
 
 .secondary {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+    font-family: var(--cool-font);
 }
 
 p {
     font-size: 1rem;
     margin-bottom: 1rem;
+    color: var(--color-secondary);
 }
 
 .container {
     max-width: 800px;
     width: 80%;
+}
+
+a, a:active, a:visited {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: var(--color-accent);
+    color: var(--color-background);
 }
 
