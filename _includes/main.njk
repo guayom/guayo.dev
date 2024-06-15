@@ -12,7 +12,7 @@
     </head>
     <body>
         <header>
-            <nav>
+            <nav id="main-nav">
                 <ul>
                     <li><a{% if active_menu_item=='home' %} class="active"{% endif %} href="/">home</a></li>
                     <li><a{% if active_menu_item=='resume' %} class="active"{% endif %} href="/resume">resume</a></li>
@@ -23,8 +23,16 @@
         <main>
             {{ content | safe }}
         </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li><a href="https://github.com/guayom" target="_blank">Github</a></li>
+                    <li><a href="https://www.linkedin.com/in/guayomena/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </nav>
+        </footer>
         <script>
-            const menuItems = document.querySelectorAll('nav ul li a');
+            const menuItems = document.querySelectorAll('nav#main-nav ul li a');
             menuItems.forEach(item => {
                 item.addEventListener('click', async (e) => {
                     e.preventDefault();
