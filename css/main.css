@@ -71,7 +71,7 @@ header {
                         transform: scaleX(0);
                         }
                         
-                    &.active:not(.entering)::after {
+                    &.active:not(.entering):not(.leaving)::after {
                         transform: scaleX(1);
                     }
 
