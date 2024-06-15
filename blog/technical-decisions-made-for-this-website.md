@@ -11,6 +11,7 @@ Hello world!
 - Deployed to netlify
 - Pure modern css
 - No JS frameworks, Alpine.js
+- Locality of behavior
 - State management
 - Native view transitions
 - Mostly html

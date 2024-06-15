@@ -173,3 +173,7 @@ blockquote {
         border-radius: 3px;
     }
 }
+
+.hidden {
+    display: none;
+}
