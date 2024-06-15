@@ -16,8 +16,8 @@
             <nav id="main-nav">
                 <ul>
                     <li><a{% if active_menu_item=='home' %} class="active"{% endif %} href="/">home</a></li>
-                    <li><a{% if active_menu_item=='resume' %} class="active"{% endif %} href="/resume">resume</a></li>
-                    <li><a{% if active_menu_item=='blog' %} class="active"{% endif %} href="/blog">blog</a></li>
+                    <li><a{% if active_menu_item=='resume' %} class="active"{% endif %} href="/resume/">resume</a></li>
+                    <li><a{% if active_menu_item=='blog' %} class="active"{% endif %} href="/blog/">blog</a></li>
                 </ul>
             </nav>
         </header>
@@ -55,6 +55,23 @@
                     window.location.href = item.href;
                     console.log('startViewTransition finished.');
                 });
+            });
+            window.addEventListener('DOMContentLoaded', (event) => { // Get the current URL's query parameters
+                let urlParams = new URLSearchParams(window.location.search);
+                // If there are any query parameters
+                if (urlParams.toString()) { // Get all the links in the main nav
+                    let navLinks = document.querySelectorAll('#main-nav>ul>li>a');
+                    // For each link
+                    navLinks.forEach(link => { // Create a new URL object from the link's href
+                        let url = new URL(link.href);
+                        // For each query parameter
+                        for (let [key, value] of urlParams.entries()) { // Add the query parameter to the link's href
+                            url.searchParams.set(key, value);
+                        }
+                        // Update the link's href
+                        link.href = url.toString();
+                    });
+                }
             });
         </script>
     </body>

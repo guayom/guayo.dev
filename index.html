@@ -45,6 +45,7 @@ layout: main
     function stepCounter() {
         let urlParams = new URLSearchParams(window.location.search);
         let stepFromUrl = Number(urlParams.get('step')) || 0;
+
         return {
             init: function () {
                 this.updateNavClass();
