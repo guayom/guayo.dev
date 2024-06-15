@@ -31,6 +31,7 @@ body {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    position: relative;
 }
 
 a {
@@ -76,6 +77,31 @@ strong {
         transform: scaleX(0);
     }
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes vertical-bounce-rtl {
+    0% {
+        left: 160%;
+    }
+    40% {
+        left: 100%;
+    }
+    44% {
+        left: 85%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
 
 header {
     display: flex;
@@ -147,8 +173,6 @@ blockquote {
     line-height: 1rem;
     border: none;
     padding: 0;
-    /* text-align: center; */
-    /* background-color: var(--fourth-color); */
     border-radius: 5px;
 
     p {
@@ -177,4 +201,24 @@ button {
 
 .hidden {
     display: none;
+}
+
+#main-nav{
+    &>ul>li {
+       position: relative; 
+    }
+    &.show-step>ul>li:last-child:after {
+        position: absolute;
+        content: "\2190";
+        margin-left: 20px;
+        top: 0;
+        left: 100%;
+        width: 150px;
+        height: 20px;
+        z-index: 1;
+        color: var(--third-color);
+        font-weight: bold;
+        font-size: 3rem;
+        animation: vertical-bounce-rtl  0.5s ease-in infinite alternate, fadeIn 0.2s forwards;
+    }
 }

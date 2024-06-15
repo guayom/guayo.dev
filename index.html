@@ -13,11 +13,10 @@ layout: main
     <strong>Alpine.js</strong>
 </p>
 <p>You can find more about my skills in <a href="/resume">my resume</a>.</p>
-<div x-data="{step: 0}">
+<div>
     <blockquote x-show="step == 0">
         <p>"Why the dull website though?"</p>
-        <cite>- Probably you right now</cite>
-        <button x-on:click="step++">Gimme answers!</button>
+        <button x-on:click="incrementStep()">Gimme answers!</button>
     </blockquote>
     <div x-show="step >= 1" id="steps" x-bind:class="{ 'hidden': step < 1 }" class="hidden">
         <ul>
@@ -38,10 +37,37 @@ layout: main
             I wrote a full <a href="/blog/technical-decisions-made-for-this-website">article on all the decisions
                 and compromises I made when I built this website</a>. I was very intentional about every decision, and
             that's just satisfying :)</p>
-        <button x-show="step > 0 && step < 6" x-on:click="step++">Next</button>
-        <button x-show="step >= 6" x-on:click="step=0">Start over?</button>
+        <button x-show="step > 0 && step < 6" x-on:click="incrementStep()">Next</button>
+        <button x-show="step >= 6" x-on:click="resetStep()">Start over?</button>
     </div>
 </div>
 <script>
-
+    function stepCounter() {
+        let urlParams = new URLSearchParams(window.location.search);
+        let stepFromUrl = Number(urlParams.get('step')) || 0;
+        return {
+            init: function () {
+                this.updateNavClass();
+            },
+            step: stepFromUrl,
+            incrementStep: function () {
+                this.step++;
+                window.history.pushState('', '', '?step=' + this.step);
+                this.updateNavClass();
+            },
+            resetStep: function () {
+                this.step = 0;
+                window.history.pushState('', '', '?step=' + this.step);
+                this.updateNavClass();
+            },
+            updateNavClass: function () {
+                let nav = document.getElementById('main-nav');
+                if (this.step == 1) {
+                    nav.classList.add('show-step');
+                } else {
+                    nav.classList.remove('show-step');
+                }
+            }
+        }
+    }
 </script>
