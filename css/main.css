@@ -1,3 +1,10 @@
+:root {
+    --first-color: #233142;
+    --second-color: #455d7a;
+    --third-color: #f95959;
+    --fourth-color: #e3e3e3;
+  }
+
 ::view-transition-old(.active),
 ::view-transition-new(.active) {
     animation-duration: 0.2s;
@@ -20,6 +27,24 @@ body {
     padding: 0 2rem;
     margin: 0 auto;
     font-family: 'Trebuchet MS', sans-serif;
+    }
+    
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+h1, h2 {
+    text-wrap: balance;         
+}
+        
+p, li {
+    line-height: 1.7rem;
+
+}
+
+strong {
+    color: var(--third-color);
 }
 
 @keyframes menu_underline {
