@@ -56,19 +56,15 @@
                     console.log('startViewTransition finished.');
                 });
             });
-            window.addEventListener('DOMContentLoaded', (event) => { // Get the current URL's query parameters
+            window.addEventListener('DOMContentLoaded', (event) => {
                 let urlParams = new URLSearchParams(window.location.search);
-                // If there are any query parameters
-                if (urlParams.toString()) { // Get all the links in the main nav
-                    let navLinks = document.querySelectorAll('#main-nav>ul>li>a');
-                    // For each link
-                    navLinks.forEach(link => { // Create a new URL object from the link's href
+                if (urlParams.toString()) {
+                    let navLinks = document.querySelectorAll('nav#main-nav ul li a');
+                    navLinks.forEach(link => {
                         let url = new URL(link.href);
-                        // For each query parameter
-                        for (let [key, value] of urlParams.entries()) { // Add the query parameter to the link's href
+                        for (let [key, value] of urlParams.entries()) {
                             url.searchParams.set(key, value);
                         }
-                        // Update the link's href
                         link.href = url.toString();
                     });
                 }
