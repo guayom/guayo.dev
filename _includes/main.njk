@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }}</title>
+        <meta name="description" content="{{ description }}">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <header>
+            <h1>{{ title }}</h1>
+            <nav>
+                <ul>
+                    <li><a{% if active_menu_item=='home' %} class="active"{% endif %} href="/">home</a></li>
+                    <li><a{% if active_menu_item=='resume' %} class="active"{% endif %} href="/resume">resume</a></li>
+                    <li><a{% if active_menu_item=='blog' %} class="active"{% endif %} href="/blog">blogs</a></li>
+                </ul>
+            </nav>
+        </header>
+        <script>
+            const menuItems = document.querySelectorAll('nav ul li a');
+            menuItems.forEach(item => {
+                item.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    if (!document.startViewTransition) {
+                        console.log('startViewTransition is not supported.');
+                        return;
+                    } else {
+                        console.log('Transition started.');
+                        const activeItem = document.querySelector('.active');
+                        if (activeItem) {
+                            activeItem.classList.add('leaving');
+                            activeItem.classList.remove('active');
+                        }
+                    }
+                    // Start transition with the View Transitions API.
+                    const transition = document.startViewTransition(() => {});
+                    await transition.finished;
+                    window.location.href = item.href;
+                    console.log('startViewTransition finished.');
+                });
+            });
+        </script>
+    </body>
+</html>
