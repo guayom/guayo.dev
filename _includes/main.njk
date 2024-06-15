@@ -12,15 +12,17 @@
     </head>
     <body>
         <header>
-            <h1>{{ title }}</h1>
             <nav>
                 <ul>
                     <li><a{% if active_menu_item=='home' %} class="active"{% endif %} href="/">home</a></li>
                     <li><a{% if active_menu_item=='resume' %} class="active"{% endif %} href="/resume">resume</a></li>
-                    <li><a{% if active_menu_item=='blog' %} class="active"{% endif %} href="/blog">blogs</a></li>
+                    <li><a{% if active_menu_item=='blog' %} class="active"{% endif %} href="/blog">blog</a></li>
                 </ul>
             </nav>
         </header>
+        <main>
+            {{ content | safe }}
+        </main>
         <script>
             const menuItems = document.querySelectorAll('nav ul li a');
             menuItems.forEach(item => {

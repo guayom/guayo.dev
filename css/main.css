@@ -16,9 +16,10 @@
 }
 
 body {
-    max-width: 800px;
+    max-width: 700px;
+    padding: 0 2rem;
     margin: 0 auto;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 @keyframes menu_underline {
@@ -41,15 +42,10 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h1 {
-        flex: 1;
-    }
+    padding: 2rem 0;
 
     nav {
-        flex: 0;
+        flex: 1;
 
         ul {
             display: flex;
