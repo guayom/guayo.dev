@@ -89,16 +89,19 @@ strong {
 
 @keyframes vertical-bounce-rtl {
     0% {
-        left: 160%;
+        transform: translateX(10px);
+    }
+    30% {
+        transform: translateX(0);
     }
     40% {
-        left: 100%;
+        transform: translateX(3px);
     }
-    44% {
-        left: 85%;
+    50% {
+        transform: translateX(0);   
     }
     100% {
-        left: 100%;
+        transform: translateX(10px);
     }
 }
 
@@ -225,4 +228,43 @@ button {
         font-size: 3rem;
         animation: vertical-bounce-rtl  0.5s ease-in infinite alternate, fadeIn 0.2s forwards;
     }
+}
+
+#step1-popover {
+    background: var(--fourth-color);
+    color: black;
+    font-weight: 400;
+    padding: 1rem;
+    max-width: 300px;
+    line-height: 1.4;
+    position: absolute;
+    margin: 0 0 0 20px;
+    border: none;
+    border-radius: 5px;
+    animation: fadeIn 0.2s forwards;
+    top: anchor(top);
+    left: anchor(right);
+    transform: translateY(-30px);
+    p {
+        margin: 0;
+    }
+
+    div {
+        display: flex;
+    }
+
+    span {
+        color: var(--third-color);
+        font-weight: bold;
+        font-size: 3rem;
+        animation: vertical-bounce-rtl 0.8s ease-in infinite, fadeIn 0.2s forwards;
+        display: inline-block;
+        transform: translateX(10px);
+    }
+}
+
+.popover-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
 }

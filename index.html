@@ -16,15 +16,15 @@ layout: main
 <div>
     <blockquote x-show="step == 0">
         <p>"Why the dull website though?"</p>
-        <button x-on:click="incrementStep()">Gimme answers!</button>
+        <button popovertarget="step1-popover" x-on:click="incrementStep()">Gimme answers!</button>
     </blockquote>
     <div x-show="step >= 1" id="steps" x-bind:class="{ 'hidden': step < 1 }" class="hidden">
         <ul>
             <li x-show="step >= 1">Did you notice the smooth transitions between pages?<br />
                 <span>No React or any bulky JS framework!</span>
             </li>
-            <li x-show="step >= 2">Did you notice how fast it loads? Navigating feels immediate!</li>
-            <li x-show="step >= 3">See how I'm managing and persisting state?</li>
+            <li x-show="step >= 2">See how I'm managing and persisting state?</li>
+            <li x-show="step >= 3">Did you notice how fast it loads? Navigating feels immediate!</li>
             <li x-show="step >= 4">I'm using many of the latest css features!<br />
                 <span>inspect my css! No sass, no tailwind, no css-in-js...</span>
             </li>
@@ -41,6 +41,7 @@ layout: main
         <button x-show="step >= 6" x-on:click="resetStep()">Start over?</button>
     </div>
 </div>
+
 <script>
     function stepCounter() {
         let urlParams = new URLSearchParams(window.location.search);

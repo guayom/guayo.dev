@@ -15,9 +15,25 @@
         <header>
             <nav id="main-nav">
                 <ul>
-                    <li><a{% if active_menu_item=='home' %} class="active"{% endif %} href="/">home</a></li>
-                    <li><a{% if active_menu_item=='resume' %} class="active"{% endif %} href="/resume/">resume</a></li>
-                    <li><a{% if active_menu_item=='blog' %} class="active"{% endif %} href="/blog/">blog</a></li>
+                    <li>
+                        <a {% if active_menu_item=='home' %} class="active" {% endif %} href="/">home</a>
+                    </li>
+                    <li>
+                        <a {% if active_menu_item=='resume' %} class="active" {% endif %} href="/resume/">resume</a>
+                    </li>
+                    <li id="menu-toggle">
+                        <a {% if active_menu_item=='blog' %} class="active" {% endif %} href="/blog/">blog</a>
+                        <div id="step1-popover" popover anchor="menu-toggle">
+                            <div class="popover-container">
+                                <div>
+                                    <span>&#8592;</span>
+                                </div>
+                                <div>
+                                    <p>Did you notice how smooth the pages transition and how the</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </header>
