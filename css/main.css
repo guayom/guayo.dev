@@ -1,14 +1,14 @@
 ::view-transition-old(.active),
 ::view-transition-new(.active) {
-    animation-duration: 0.3s;
+    animation-duration: 0.2s;
 }
 
 ::view-transition-old(.active) {
-    animation: 0.3s linear both menu_underline_reverse;
+    animation: 0.2s linear both menu_underline_reverse;
 }
 
 ::view-transition-new(.active) {
-    animation: 0.3s linear both menu_underline;
+    animation: 0.2s linear both menu_underline;
 }
 
 @view-transition {
@@ -72,11 +72,11 @@ header {
                     }
 
                     &.active::after {
-                        animation: menu_underline 0.3s linear both;
+                        animation: menu_underline 0.2s linear both;
                     }
 
                     &.leaving:after {
-                        animation: menu_underline_reverse 0.3s linear both;
+                        animation: menu_underline_reverse 0.2s linear both;
                     }
                  }
             }
