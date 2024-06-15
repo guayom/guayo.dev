@@ -69,9 +69,13 @@ header {
                         height: 2px;
                         background-color: black;
                         transform: scaleX(0);
+                        }
+                        
+                    &.active:not(.entering)::after {
+                        transform: scaleX(1);
                     }
 
-                    &.active::after {
+                    &.entering::after {
                         animation: menu_underline 0.2s linear both;
                     }
 
