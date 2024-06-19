@@ -1,0 +1,16 @@
+---
+layout: main
+title: Contact
+description: Feel free to reach out by using this form.
+active_menu_item: contact
+---
+<h1>Say hi!</h1>
+<p>You may reach me via this form or <a href="https://www.linkedin.com/in/guayomena/" target="_blank">LinkedIn</a>.</p>
+<form name="contact" netlify netlify-honeypot="bot-field" method="POST">
+    <input type="hidden" name="bot-field" />
+    <label>Name<span class="required">*</span> <input type="text" name="name" required /></label>
+    <label>Email<span class="required">*</span> <input type="email" name="email" required /></label>
+    <label>Message<span class="required">*</span> <textarea name="message" required></textarea></label>
+    <div class="required">* required</div><br />
+    <button type="submit">Send</button>
+</form>

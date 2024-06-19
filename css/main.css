@@ -283,3 +283,25 @@ button {
         font-size: small;
     }
 }
+
+form {
+    label {
+        display: block;
+        margin-bottom: 1rem;
+
+    }
+
+    input, textarea {
+        padding: 0.5rem;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        margin: 0.5rem 0;
+        width: 100%;
+        display: block;
+    }
+
+    .required {
+        color: var(--third-color);
+        font-size: 0.8rem;
+    }
+}
