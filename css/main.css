@@ -57,7 +57,8 @@ p, li {
 }
 
 strong {
-    color: var(--third-color);
+    color: var(--second-color);
+    font-weight: bold;
 }
 
 @keyframes menu_underline {
