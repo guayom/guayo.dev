@@ -48,3 +48,5 @@ This is such a minimal website and my stack is so lightweight that achieving a p
 ## Conclusion
 
 After years of procrastinating, I finally developed my personal website, meeting all the constraints I set for myself. While it may not be the flashiest site, I’m very pleased with it because it embodies my strong opinions on how simple websites should be built. Additionally, it served as an excellent playground for experimenting with modern web APIs and exciting new CSS features.
+
+In case you're interested, here's the [source code](https://github.com/guayom/guayo.dev).
