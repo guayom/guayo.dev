@@ -59,6 +59,7 @@
                     e.preventDefault();
                     if (!document.startViewTransition) {
                         console.log('startViewTransition is not supported.');
+                        window.location.href = item.href;
                         return;
                     } else {
                         console.log('Transition started.');
