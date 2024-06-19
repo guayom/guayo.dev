@@ -268,3 +268,18 @@ button {
     gap: 1.5rem;
     align-items: center;
 }
+
+.blog-posts-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+
+    span {
+        display: block;
+        font-size: small;
+    }
+}
