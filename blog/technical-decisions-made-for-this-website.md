@@ -35,6 +35,10 @@ Managing state via the URL makes a lot of sense for the web. On my homepage, I m
 
 After reading [Hypermedia Systems](https://hypermedia.systems/) by Carson Gross, Adam Stepinski, and Deniz Akşimşek, I was compelled by the concept of locality of behavior. While I didn't use HTMX for this website, I applied this concept by embedding scripts directly into the relevant HTML templates instead of separate files. This approach makes the code more maintainable and clarifies which elements are affected by the scripts. Alpine.js is really compatible with this approach.
 
+## Form management
+
+I chose to use Netlify Forms to handle my contact form because it offers a simple and free solution that perfectly fits my needs. Netlify provides seamless form handling with no backend setup required, and the free tier allows up to 100 submissions per month, which is more than sufficient for my expected traffic.
+
 ## Conclusion
 
 After years of procrastinating, I finally developed my personal website, meeting all the constraints I set for myself. While it may not be the flashiest site, I’m very pleased with it because it embodies my strong opinions on how simple websites should be built. Additionally, it served as an excellent playground for experimenting with modern web APIs and exciting new CSS features.
