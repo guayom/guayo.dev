@@ -41,7 +41,7 @@ I chose to use Netlify Forms to handle my contact form because it offers a simpl
 
 ## Performance
 
-This is such a minimal website and my stack is so lightweight that achieving a perfect score in Lighthouse wasn't a problem. The entire deployment currently totals just 48 KB, which is impressively minimal. The homepage file is only 7 KB, and even after making all the necessary requests, the total size remains at just 48 KB. And I haven't even enabled gzip compression or minified css and js yet. I will report back when I do that.
+This is such a minimal website and my stack is so lightweight that achieving a perfect score in Lighthouse wasn't a problem. The entire deployment currently totals just 48 KB, which is impressively minimal. The homepage file is only 7 KB, and even after making all the necessary requests, the total size remains at just 48 KB. I haven't even minified my CSS or JS assets yet. But Netlify uses Brotli compression for all the resources.
 
 ![Lighthouse report](https://res.cloudinary.com/guayo/image/upload/w_600,q_100/v1718784149/guayo.dev/Screen_Shot_2024-06-19_at_02.00.44.png)
 
