@@ -39,6 +39,12 @@ After reading [Hypermedia Systems](https://hypermedia.systems/) by Carson Gross,
 
 I chose to use Netlify Forms to handle my contact form because it offers a simple and free solution that perfectly fits my needs. Netlify provides seamless form handling with no backend setup required, and the free tier allows up to 100 submissions per month, which is more than sufficient for my expected traffic.
 
+## Performance
+
+This is such a minimal website and my stack is so lightweight that achieving a perfect score in Lighthouse wasn't a problem. The entire deployment currently totals just 48 KB, which is impressively minimal. The homepage file is only 7 KB, and even after making all the necessary requests, the total size remains at just 48 KB.
+
+![Lighthouse report](https://res.cloudinary.com/guayo/image/upload/w_600,q_100/v1718784149/guayo.dev/Screen_Shot_2024-06-19_at_02.00.44.png)
+
 ## Conclusion
 
 After years of procrastinating, I finally developed my personal website, meeting all the constraints I set for myself. While it may not be the flashiest site, I’m very pleased with it because it embodies my strong opinions on how simple websites should be built. Additionally, it served as an excellent playground for experimenting with modern web APIs and exciting new CSS features.
