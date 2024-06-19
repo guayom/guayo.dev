@@ -286,6 +286,9 @@ button {
 }
 
 form {
+    max-width: 100%;
+    box-sizing: border-box;
+
     label {
         display: block;
         margin-bottom: 1rem;
@@ -299,6 +302,7 @@ form {
         margin: 0.5rem 0;
         width: 100%;
         display: block;
+        box-sizing: border-box;
     }
 
     .required {
