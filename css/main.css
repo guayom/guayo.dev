@@ -34,6 +34,12 @@ body {
     position: relative;
 }
 
+@media (max-width: 600px) {
+    body {
+        padding: 0 1.5rem;
+    }
+}
+
 a {
     color: var(--second-color);
 
@@ -45,6 +51,13 @@ a {
 h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+        margin-top: 0.5rem;
+    }
 }
 
 h1, h2 {
@@ -111,6 +124,14 @@ header {
     display: flex;
     padding: 2rem 0;
     flex: 0 0;
+}
+
+@media (max-width: 600px) {
+    header {
+        display: flex;
+        padding: 1rem 0 0.5rem;
+        flex: 0 0;
+    }
 }
 
 main {
