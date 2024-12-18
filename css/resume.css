@@ -63,3 +63,91 @@ section {
         margin-bottom: 1rem;
     }
 }
+
+@media print {
+    body {
+        max-width: 100%;
+        padding: 0;
+        margin: 1rem 2em;
+        font-size: 13px;
+        line-height: 1rem;
+    }
+
+    p {
+        line-height: 1.2rem;
+        margin: 0;
+    }
+
+    header, footer {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin: 0 0 1rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin: 0 0 1rem;
+    }
+
+    #grid {
+        display: flex;
+        flex-direction: row;
+        column-gap: 2rem;
+
+        section:first-child{
+            flex: 1;
+        }
+
+        section:last-child {
+            width: 200px;
+        }
+    }
+
+    .location {
+        color: #888;
+
+        &:before {
+            content: " - ";
+        }
+    }
+    
+    .experience > .skills {
+        display: none;
+    }
+
+    .experience {
+        margin-bottom: 1.5rem;
+
+        ul {
+            padding: 0 0 0 1rem;
+
+            li {
+                line-height: 1.2rem;
+            }
+        }
+    }
+
+    .profile {
+        display: none;
+    }
+
+    #skills {
+        ul {
+            display: block;
+            li {
+                display: block;
+            }
+        }
+    }
+
+    .break-before {
+        page-break-before: always; /* Forces a page break before this element */
+      }
+    
+      .break-after {
+        page-break-after: always; /* Forces a page break after this element */
+      }
+}
