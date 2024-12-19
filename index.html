@@ -14,63 +14,6 @@ layout: main
     <strong>Alpine.js</strong>
 </p>
 <p>You can find more about my skills in <a href="/resume">my resume</a>.</p>
-<div>
-    <blockquote x-show="step == 0">
-        <p>"Why the dull website though?"</p>
-        <button popovertarget="step1-popover" x-on:click="incrementStep()">Gimme answers!</button>
-    </blockquote>
-    <div x-show="step >= 1" id="steps" x-bind:class="{ 'hidden': step < 1 }" class="hidden">
-        <ul>
-            <li x-show="step >= 1">Did you notice the smooth transitions between pages?<br />
-                <span>No React or any bulky JS framework!</span>
-            </li>
-            <li x-show="step >= 2">See how I'm managing and persisting state?</li>
-            <li x-show="step >= 3">Did you notice how fast it loads? Navigating feels immediate!</li>
-            <li x-show="step >= 4">I'm using many of the latest css features!<br />
-                <span>inspect my css! No sass, no tailwind, no css-in-js...</span>
-            </li>
-            <li x-show="step >= 5">Have a look at my markup, it's pretty semantic!</li>
-        </ul>
-        <p x-show="step >= 6">Anyway, it's not the flashiest site, but I'm expressing some of my <strong>strong
-                opinions</strong> about how
-            websites should be
-            built.
-            I wrote a full <a href="/blog/technical-decisions-made-for-this-website">article on all the decisions
-                and compromises I made when I built this website</a>. I was very intentional about every decision, and
-            that's just satisfying :)</p>
-        <button x-show="step > 0 && step < 6" x-on:click="incrementStep()">Next</button>
-        <button x-show="step >= 6" x-on:click="resetStep()">Start over?</button>
-    </div>
-</div>
 
-<script>
-    function stepCounter() {
-        let urlParams = new URLSearchParams(window.location.search);
-        let stepFromUrl = Number(urlParams.get('step')) || 0;
-
-        return {
-            init: function () {
-                this.updateNavClass();
-            },
-            step: stepFromUrl,
-            incrementStep: function () {
-                this.step++;
-                window.history.pushState('', '', '?step=' + this.step);
-                this.updateNavClass();
-            },
-            resetStep: function () {
-                this.step = 0;
-                window.history.pushState('', '', '?step=' + this.step);
-                this.updateNavClass();
-            },
-            updateNavClass: function () {
-                let nav = document.getElementById('main-nav');
-                if (this.step == 1) {
-                    nav.classList.add('show-step');
-                } else {
-                    nav.classList.remove('show-step');
-                }
-            }
-        }
-    }
-</script>
+<p>This site looks pretty dull right now, but I made some interesting technical decisions. Check out my <a
+        href="/blog/technical-decisions-made-for-this-website">blog post about that</a>.</p>
