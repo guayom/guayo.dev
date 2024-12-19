@@ -42,7 +42,7 @@
                 </ul>
             </nav>
         </header>
-        <main>
+        <main class="fade-in">
             {{ content | safe }}
         </main>
         <footer>
@@ -57,39 +57,29 @@
             const menuItems = document.querySelectorAll('nav#main-nav ul li a');
             menuItems.forEach(item => {
                 item.addEventListener('click', async (e) => {
-                    e.preventDefault();
-                    if (!document.startViewTransition) {
+                    if (document.startViewTransition) {
+                        e.preventDefault();
+                        console.log('Transition started.');
+                        const mainElement = document.querySelector('main');
+                        mainElement.classList.remove('fade-in');
+                        mainElement.classList.add('fade-out');
+                        const transition = document.startViewTransition(() => {
+                            console.log('startViewTransition callback.');
+                            window.location.href = item.href;
+                        });
+                        await transition.finished;
+                        console.log('startViewTransition finished.');
+                    } else {
                         console.log('startViewTransition is not supported.');
                         window.location.href = item.href;
-                        return;
-                    } else {
-                        console.log('Transition started.');
-                        const activeItem = document.querySelector('.active');
-                        if (activeItem) {
-                            activeItem.classList.add('leaving');
-                            activeItem.classList.remove('active');
-                            item.classList.add('entering');
-                        }
                     }
-                    // Start transition with the View Transitions API.
-                    const transition = document.startViewTransition(() => {});
-                    await transition.finished;
-                    window.location.href = item.href;
-                    console.log('startViewTransition finished.');
                 });
             });
             window.addEventListener('DOMContentLoaded', (event) => {
-                let urlParams = new URLSearchParams(window.location.search);
-                if (urlParams.toString()) {
-                    let navLinks = document.querySelectorAll('nav#main-nav ul li a');
-                    navLinks.forEach(link => {
-                        let url = new URL(link.href);
-                        for (let [key, value] of urlParams.entries()) {
-                            url.searchParams.set(key, value);
-                        }
-                        link.href = url.toString();
-                    });
-                }
+                const mainElement = document.querySelector('main');
+                mainElement.addEventListener('animationend', () => {
+                    mainElement.classList.remove('fade-in');
+                });
             });
         </script>
     </body>
