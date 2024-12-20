@@ -59,11 +59,6 @@
                     activeItem.classList.add('leaving');
                 }
                 mainElement.classList.add('fade-out');
-                e.waitUntil(new Promise((resolve) => {
-                    mainElement.addEventListener('animationend', () => {
-                        resolve();
-                    }, 2500);
-                }));
             });
             window.addEventListener('pagereveal', async (e) => {
                 const activeItem = document.querySelector('.active');
