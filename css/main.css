@@ -225,7 +225,7 @@ nav {
                 }
 
                 &.leaving:after {
-                    animation: menu_underline_reverse 0.2s linear both;
+                    animation: menu_underline_reverse 0.1s linear both;
                 }
              }
         }
