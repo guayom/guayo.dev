@@ -179,6 +179,7 @@ header {
 
 main {
     flex: 1;
+    view-transition-name: main;
 }
 
 nav {
@@ -395,3 +396,19 @@ form {
 img {
     max-width: 100%;
 }
+
+/* .fade-out {
+    color: white !important;
+}
+
+.leaving, .fade-out {
+    color: red !important;
+}
+
+.entering, .fade-in {
+    color: green !important;
+}
+
+.fade-in {
+    background-color: blue;
+} */

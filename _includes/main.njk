@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="/css/resume.css">
         <script type="speculationrules">
-            { "prefetch": [ {"source": "list", "urls": ["/", "/resume", "/blog"]} ] }
+            { "prefetch": [ {"source": "list", "urls": ["/", "/resume", "/blog", "/contact"]} ] }
         </script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -48,34 +48,9 @@
                 </ul>
             </nav>
         </header>
-        <main>
+        <main class="fade-in">
             {{ content | safe }}
         </main>
-        <script>
-            const mainElement = document.querySelector('main');
-            window.addEventListener('pageswap', async (e) => {
-                const activeItem = document.querySelector('.active');
-                if (activeItem) {
-                    activeItem.classList.add('leaving');
-                }
-                mainElement.classList.add('fade-out');
-            });
-            window.addEventListener('pagereveal', async (e) => {
-                const activeItem = document.querySelector('.active');
-                if (activeItem) {
-                    activeItem.classList.add('entering');
-                }
-                mainElement.classList.add('fade-in');
-                await new Promise((resolve) => {
-                    mainElement.addEventListener('animationend', () => {
-                        mainElement.classList.remove('fade-in');
-                        resolve();
-                        if (activeItem) {
-                            activeItem.classList.remove('entering');
-                        }
-                    }, {once: true});
-                });
-            });
-        </script>
+        <script src="/js/animations.js"></script>
     </body>
 </html>
