@@ -166,6 +166,7 @@ header {
     display: flex;
     padding: 2rem 0;
     flex: 0 0;
+    justify-content: space-between;
 }
 
 @media (max-width: 600px) {
@@ -227,6 +228,17 @@ nav {
                     animation: menu_underline_reverse 0.2s linear both;
                 }
              }
+        }
+    }
+
+    &.social {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+
+        li {
+            margin-right: 0;
+            margin-left: 1rem;
         }
     }
 }
