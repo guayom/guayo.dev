@@ -92,7 +92,7 @@ section {
         margin: 0;
     }
 
-    header, footer {
+    header, footer, .hide-on-print {
         display: none;
     }
 
