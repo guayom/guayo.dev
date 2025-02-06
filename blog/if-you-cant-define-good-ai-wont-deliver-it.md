@@ -1,6 +1,6 @@
 ---
 title: If you can't define "Good," AI won't deliver it
-description: Discover why not knowing the basics means you might most likely end up with terrible code.
+description: Discover why skipping the basics almost guarantees you'll end up with messy, terrible code.
 layout: post
 date: 2025-02-06
 ---
