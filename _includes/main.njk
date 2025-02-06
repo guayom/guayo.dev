@@ -43,15 +43,28 @@
             </nav>
             <nav class="social">
                 <ul>
-                    <li><a href="https://www.linkedin.com/in/guayomena/" target="_blank"><img src="/img/linkedin-square.svg" alt="LinkedIn"/></a></li>
-                    <li><a href="https://github.com/guayom" target="_blank"><img src="/img/github.svg" alt="GitHub"/></a></li>
-                    <li><a href="https://bsky.app/profile/guayom.bsky.social" target="_blank"><img src="/img/bluesky.svg" alt="Bluesky"/></a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/guayomena/" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </li>
+                    </li>
+                    <li>
+                        <a href="https://github.com/guayom" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://bsky.app/profile/guayom.bsky.social" target="_blank">
+                            <i class="fa-brands fa-bluesky"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
         <main class="fade-in">
             {{ content | safe }}
         </main>
+        {% getBundle "fontawesome" %}
         <script src="/js/animations.js"></script>
     </body>
 </html>

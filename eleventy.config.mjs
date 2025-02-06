@@ -1,4 +1,7 @@
-module.exports = function (eleventyConfig) {
+import fontAwesomePlugin from "@11ty/font-awesome";
+
+export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(fontAwesomePlugin);
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("js");
@@ -15,4 +18,4 @@ module.exports = function (eleventyConfig) {
     };
     return theDate.toLocaleDateString(locale, options);
   });
-};
+}
