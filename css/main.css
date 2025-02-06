@@ -180,6 +180,7 @@ header {
 main {
     flex: 1;
     view-transition-name: main;
+    padding-bottom: 2rem
 }
 
 nav {
