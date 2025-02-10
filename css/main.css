@@ -426,3 +426,13 @@ img {
 .fade-in {
     background-color: blue;
 } */
+
+#disqus_thread {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.date {
+    font-size: smaller;
+    color: gray;
+}

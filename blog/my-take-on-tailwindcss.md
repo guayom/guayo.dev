@@ -1,5 +1,5 @@
 ---
-title: My take on CSS
+title: My take on TailwindCSS
 description: While I think tailwind is a great tool, I don't reaally like it for most use cases
 layout: post
 date: 2025-02-10
